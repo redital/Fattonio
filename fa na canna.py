@@ -25,7 +25,6 @@ def start(message):
     
     
     if message.chat.type=="group":
-        print(os.getcwd())
         open("Classifica dei fattoni in " + message.chat.title + ".txt","a")
         open("Classifica dei coglioni in " + message.chat.title + ".txt","a")
     
@@ -66,7 +65,6 @@ bro aggiungimi ad un gruppo e ti girerò qualche canna
 
 @bot.message_handler(commands=['canna'])
 def canna(message):
-    print(os.getcwd())
     markup=types.ReplyKeyboardRemove()
     if message.chat.type=="group":
         bot.send_message( message.chat.id,"Oh " + message.from_user.first_name + " ne ha girata una!\n\nChi fuma?", reply_markup=gen_markup(message))
@@ -82,7 +80,6 @@ bro aggiungimi ad un gruppo e te la giro io qualche canna
 
 @bot.message_handler(commands=['classifiche'])
 def classifiche(message):
-    print(os.getcwd())
     markup=types.ReplyKeyboardRemove()
     if message.chat.type=="group":
         controllo_fattoni="True"
