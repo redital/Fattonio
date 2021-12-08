@@ -3,13 +3,21 @@ from time import sleep
 import telebot
 from config import Token
 import os
+import random
 
 API_TOKEN = Token
 
 
 bot = telebot.TeleBot(API_TOKEN)
 
-intervallo= 1*60*60
+intervallo = 1*60*60
+
+def randomizeInterval():
+    global intervallo
+    intervallo = random.randint(1*60*60, 1*100*60)
+    return
+
+randomizeInterval()
 
 os.chdir("assets")
 
@@ -21,7 +29,7 @@ coglioni={}
 def start(message):
     markup=types.ReplyKeyboardRemove()
     print(message.chat.type)
-
+    randomizeInterval()
     
     
     if message.chat.type=="group":
@@ -126,11 +134,13 @@ def gen_markup(message):
     markup.add(item1)
     item2 = types.InlineKeyboardButton("Io!", callback_data="Io!")
     markup.add(item2)
+    randomizeInterval()
     return markup
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
     markup=types.ReplyKeyboardRemove()
+    randomizeInterval()
     
     bot.edit_message_reply_markup(call.message.chat.id,call.message.message_id,None)
 
@@ -224,46 +234,8 @@ def converti_tempo(intervallo):
     return tempo
     
 tempo=converti_tempo(intervallo)
-print("lo fa ogni " + tempo)
+print("lo fa ogni tempo random")
 print("fatto")
 
 
 bot.polling()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
