@@ -4,5 +4,5 @@ Questo è un piccolo bot, molto semplice. Ogni tot farà un **SANDWICH**, ossia 
 Ah i pulsanti sono due... se sbagli o sei un coglione o sei una guardia, vedi un po' tu.
 Comunuque volendo sapere chi ha preso più **SANDWICH** oppure chi è più coglione c'è il comando /classifiche
 
-### Comunque, sì, il bot funziona solo nei gruppi, ma fra che cazzo te ne fai in chat privata scusa???
+### Comunque, sì, il bot funziona solo nei gruppi, ma fra che cazzo te ne fai in chat privata scusa????????????????????
 
